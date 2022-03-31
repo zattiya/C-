@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*Programme to approximate the value of e.
+    Written by Ziad Attiya on June 2,2018 */
+
+int main()
+{
+    int n=0;  //number entered by user
+    int i,j=0;   //counters
+    float e=1; /*holds the approximated value of e
+    the one compensated for the 1 in the formula.*/
+
+    float fact=1; /*holds the value of factorial in the deno.
+    It is set to 0 to avoid multiplying by 0*/
+
+
+    printf("Enter an integer: "); //prompts
+    scanf("%d", &n);//stroes the entered value into n
+
+    if (n==0) n=1; /*if the user enters 0 for n.
+    this sets 0! to 1*/
+
+    for (j=1; j<=n; j++){
+
+    for (i=1; i<=j; i++){fact=fact*i;/*calculates factorial*/}
+
+
+
+
+    e=e+(1/fact); //uses the formula to calculate.
+
+    }
+
+    printf("e= %.3f\n", e); //outputs.
+
+    return 0;
+}
