@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*This programme finds the Fibonacci sequence of a number.
+This programme is written by Ziad Attiya in March 2022.
+*/
+int main()
+{
+    int x1, x2, temp, count, n;
+    int fib_o, go_i, n_i;
+    printf("Enter a number: \n");
+    scanf("%d", &n_i);
+
+
+        x1=1;
+        x2=1;
+        n=n_i;
+        count=0;
+        while (count <n){
+
+
+
+                if (count!=0 && count!=1){
+
+                    temp=x1;
+                    x1=x2;
+                    x2=x1+temp;
+
+
+                }
+                fib_o=x2;
+                printf("%d ", x2);
+                count++;
+            }
+
+    return 0;
+}
