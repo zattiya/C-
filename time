@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*Programme to display the time elapsed from an input.
+    Written by: Ziad Attiya
+    Date: May 31, 2018*/
+
+int main()
+{
+   float num1=0; //dummy variable
+   int num=0; //This is an integer "version" of num to compare to
+
+    int h; //holds hours
+   int m=0; //holds minutes' digits
+
+   char a='p'; //a or p from am/pm
+
+
+
+    while (1) { //keeps looping until broken
+
+    printf("\n"); //leaves an empty line denoting the end of loop
+
+    printf("Enter a non-negative integer number: "); //prompt
+    scanf("%f", &num1); //holds input into num1 which is a float
+    num=num1;
+    //assign the input value to an int variable now.
+    /*if after assigning, the two values are not the same then the
+    user has input a decimal*/
+
+        if (num != num1) {printf("Invalid input\n");continue;}
+
+        if (num==0){printf("End.\n");break;}
+        if (num<0){printf("Invalid input\n");continue;}
+
+
+
+    m=num%100; //isolates and stores minutes
+    num=num/100; //gets rid of the digits that have been "stored" in m
+    h=0;
+
+    if (num>0){ //means there are hours entered
+    h=num%100; //holds the hours into variable called hours
+
+        if (h>=12) //means that entered number is in 24-hour format
+            {
+            h=h-12; //restores to 12-hour format
+            a='a'; //chagned the postfix to 'a' for 'am'.
+            }
+    }
+
+    else if (h==0)h=12;
+
+
+    if (num1>0){ /*This condition ensure the output does not print
+            when input is zero*/
+            printf("Start time: 12:00pm\n");
+            printf("End time: %d:%.2d%cm\n", h,m,a ); //final display
+    }
+
+
+    }
+
+
+    return 0;
+}
