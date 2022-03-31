@@ -22,13 +22,10 @@ int main()
 
     for (j=1; j<=n; j++){
 
-    for (i=1; i<=j; i++){fact=fact*i;/*calculates factorial*/}
+      for (i=1; i<=j; i++){fact=fact*i;/*calculates factorial*/}
 
 
-
-
-    e=e+(1/fact); //uses the formula to calculate.
-
+         e=e+(1/fact); //uses Euler's formula to calculate.
     }
 
     printf("e= %.3f\n", e); //outputs.
